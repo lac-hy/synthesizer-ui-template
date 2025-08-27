@@ -1,10 +1,23 @@
+let bodyElement = document.body;
+
+
+function changebackgroundColor(){
+bodyElement.style.backgroundColor = "cyan"
+}
+
+let myButton = document.getElementById("exampleButton");
+myButton.addEventListener("click", changebackgroundColor);
+
+myButton.addEventListener("click", () => {
+  polySynth.triggerAttackRelease ("c3", "8n");
+});
+
 ///////////// Button
 
 let buttonOutputText = document.getElementById("buttonOutput");
 let buttonEventText = document.getElementById("currentButtonEvent");
 let heldButtonText = document.getElementById("buttonHeldEvent");
 
-/* 
 myButton.addEventListener("mouseenter", () => { 
   buttonEventText.textContent = "mouseenter";
 });
@@ -15,12 +28,14 @@ myButton.addEventListener("mouseleave", () => {
 
 myButton.addEventListener("mousedown", () => { 
   buttonEventText.textContent = "mousedown";
+  heldButtonText.textContent = "true";
 });
 
 myButton.addEventListener("mouseup", () => { 
   buttonEventText.textContent = "mouseup";
+  heldButtonText.textContent = "false";
 });
- */
+
 ///////////// Checkbox
 let myCheckbox = document.getElementById("exampleCheckbox");
 let checkboxOutputText = document.getElementById("checkboxOutput");
@@ -39,6 +54,11 @@ distCheckbox.addEventListener("click", (e) => {
   let isChecked = e.target.checked;
   toggleDistortion(isChecked);
 });
+
+verbCheckbox.addEventListener("click", (e) => {
+  let isChecked = e.target.checked;
+  toggleReverb(isChecked);
+})
 
 ///////////// Radio
 let mySineRadio = document.getElementById("sine");
@@ -64,7 +84,7 @@ mySelect.addEventListener("change", (e) => {
 let myRange = document.getElementById("exampleRange");
 let rangeOutputText = document.getElementById("rangeOutput");
 
-myRange.addEventListener("input", (e) => {
+myRange.addEventListener("change", (e) => {
   rangeOutputText.textContent = e.target.value;
 });
 

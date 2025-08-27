@@ -66,3 +66,65 @@ dialog::backdrop {
   /* color: var(--col02); */
   padding: 0 1rem;
 }
+
+.keyboardCont {
+    height: 10rem;
+    display: flex;
+}
+
+.octaveCont {
+    width: 15rem;
+    position: relative;
+}
+
+.whiteKeyCont {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: stretch;
+}
+
+.whiteKey {
+    flex: 1;
+    padding: 0;
+    background-color: #d1005d;
+}
+
+.whiteKey:hover {
+    cursor: pointer;
+    background-color: rgb(241, 219, 219);
+}
+
+.whiteKey:active {
+    filter: invert();
+}
+
+.blackKeyCont {
+    position: absolute;
+    top: 0%;
+    display: flex;
+    height: 50%;
+    width: 100%;
+    align-items: stretch;
+    pointer-events: none;
+}
+
+.blackKey {
+    flex: 1;
+    padding: 0;
+    pointer-events: all;
+    background-color: #7915eb;
+}
+
+.blackKey:hover {
+    cursor: pointer;
+    background-color: blanchedalmond;
+}
+
+.blackKey:active {
+    filter: invert();
+}
+
+.ghostKey {
+    flex: 0.5;
+}
